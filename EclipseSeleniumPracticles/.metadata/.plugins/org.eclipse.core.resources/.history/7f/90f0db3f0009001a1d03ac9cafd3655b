@@ -1,0 +1,74 @@
+package com.k2js.mavenfinalfw.practice.testscripts;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Command;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.reporters.FailedReporter;
+
+import com.k2js.mavenfinalfw.practice.pageobjects.HomePage;
+import com.k2js.mavenfinalfw.practice.util.BrowserFactory;
+import com.k2js.mavenfinalfw.practice.util.CommonUtil;
+import com.k2js.mavenfinalfw.practice.util.ExcelReader;
+import com.k2js.mavenfinalfw.practice.util.FailRerun;
+
+public class NTRunner {
+	String bn,rm,url;
+	WebDriver driver;
+	HomePage hp;
+	@Parameters({"bname","rmode"})
+	@BeforeTest
+	public void dataReader(@Optional("chrome")String b,@Optional("local")String r) {
+		this.bn=b;
+		this.rm=r;
+	}
+	@BeforeClass
+	public void readConfigData() {
+		try {
+			this.url=CommonUtil.getProperties("config","url");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	@BeforeMethod
+	public void preCondition() {
+		this.driver=BrowserFactory.getBrowser(this.bn, this.rm);
+		BrowserFactory.opernUrl(this.url);
+		PageFactory.initElements(this.driver, HomePage.class);
+	}
+	
+	@Test(dataProvider = "ntt",dataProviderClass = ExcelReader.class,retryAnalyzer =FailRerun.class ,groups= {"high"})
+	public void VerifyHomePageTitle(String...data) {
+		System.out.println("Test Started");
+		String errMessage="",result="Fail";
+		try {
+			String acttitle=this.hp.getHomePageTitle();
+			String exptitle=data[0];
+			Assert.assertEquals(acttitle, exptitle,"Title are not matching");
+			result="pass";
+		}catch(Throwable t) {
+			errMessage=t.getMessage();
+			CommonUtil.takeScreenShot(this.driver);
+			throw t;
+		}finally {
+			System.out.println("Result="+result+"rowno"+data[data.length-1]);
+			if(!errMessage.isEmpty()) {
+				System.out.println("Error"+errMessage);
+			}
+		}
+	}
+	@AfterMethod
+	public void postCondition() {
+		BrowserFactory.closeBrowser();
+	}
+
+}

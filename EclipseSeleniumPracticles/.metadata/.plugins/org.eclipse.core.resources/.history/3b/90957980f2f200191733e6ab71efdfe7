@@ -1,0 +1,32 @@
+package com.k2js.seleniumbasics.assignments;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+
+public class FindNthLargestValueInYahooText2 {
+	static ChromeDriver cd;
+
+	@FindBy(xpath = "//ul[@role='listbox']/li[@class='yui3-aclist-item']")
+	private List<WebElement> lislist_searchkeys;
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\SeleniumTrainingByJitendra\\Tools\\Selenium 3.141.59\\chromedriver.exe");
+		ChromeDriver cd = new ChromeDriver();
+		cd.get("https://www.yahoo.com");
+		cd.manage().window().maximize();
+		cd.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		cd.findElement(By.id("uh-search-box")).sendKeys("Testing");
+		List<WebElement> list_searchkeys = cd
+				.findElementsByXPath("//ul[@role='listbox']/li[@class='yui3-aclist-item']");
+		int totalSize = list_searchkeys.size();
+		System.out.println(totalSize);
+
+	}
+
+}

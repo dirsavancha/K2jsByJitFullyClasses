@@ -1,0 +1,9 @@
+package com.k2js.seleniumbasics.assignments;
+
+public class ClickReverseOrder2ndMethod {
+
+	public static void main(String[] args) {
+
+	}
+
+}

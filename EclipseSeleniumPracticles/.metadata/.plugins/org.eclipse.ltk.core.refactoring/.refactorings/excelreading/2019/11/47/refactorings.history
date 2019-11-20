@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ExcelReader.java&apos; to &apos;mavenfinalframework/src/test/java/com.k2js.mavenfinalfw.practice.util&apos;&#x0D;&#x0A;- Original project: &apos;excelreading&apos;&#x0D;&#x0A;- Destination element: &apos;mavenfinalframework/src/test/java/com.k2js.mavenfinalfw.practice.util&apos;&#x0D;&#x0A;- Original element: &apos;com.k2js.excelreading.practice.ExcelReader.java&apos;" description="Copy compilation unit" destination="=mavenfinalframework/src\/test\/java&lt;com.k2js.mavenfinalfw.practice.util" element1="/src\/test\/java&lt;com.k2js.excelreading.practice{ExcelReader.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573964410647" units="1" version="1.0"/>
+</session>

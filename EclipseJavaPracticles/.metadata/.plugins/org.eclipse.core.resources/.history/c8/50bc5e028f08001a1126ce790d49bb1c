@@ -1,0 +1,12 @@
+package com.rk.twodimarray.practice;
+
+public class Prog1 {
+	static int [][] i= {{10},{30,40,50},{60,70}};
+	public static void main(String[] args) {
+		
+		System.out.println("Total Length of an array"+Prog1.i.length);
+		System.out.println("Length of index 0"+Prog1.i[0].length);
+		
+	}
+
+}

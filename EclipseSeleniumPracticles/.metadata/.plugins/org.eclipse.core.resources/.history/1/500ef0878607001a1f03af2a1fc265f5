@@ -1,0 +1,25 @@
+package com.rk.apsrtcframework.pageobjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class ReservationPage {
+	
+	@FindBy(xpath="//a[@Home]")
+	private WebElement homeLink;
+	
+	WebDriver driver;
+	public ReservationPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	public ReservationPage clickOnHomeButton() {
+		homeLink.click();
+		return PageFactory.initElements(driver, ReservationPage.class);
+	}
+	
+	
+
+}

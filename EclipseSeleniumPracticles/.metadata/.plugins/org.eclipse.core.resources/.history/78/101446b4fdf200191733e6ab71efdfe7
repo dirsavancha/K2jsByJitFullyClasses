@@ -1,0 +1,12 @@
+package com.k2js.seleniumbasics.assignments;
+
+public class SnapDealScrollDown {
+	// @FindBy()
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.crome.chrome",
+				"D:\\SeleniumTrainingByJitendra\\Tools\\Selenium 3.141.59\\chromedriver.exe");
+
+	}
+
+}

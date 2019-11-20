@@ -1,0 +1,14 @@
+package com.k2js.seleniumbasics.assignments;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SnapDealScrollDown {
+	static ChromeDriver cd;
+	public static void main(String[] args) {
+		System.setProperty("webdriver.crome.chrome",
+				"D:\\SeleniumTrainingByJitendra\\Tools\\Selenium 3.141.59\\chromedriver.exe");
+		cd.get("https://www.snapdeal.com");
+
+	}
+
+}

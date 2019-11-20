@@ -1,0 +1,22 @@
+package com.rk.apsrtcframework.util;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class CommonUtil {
+
+	public static String getProperties(String fn, String key) {
+		try {
+		FileInputStream fis = new FileInputStream("screenshot/" + fn + ".properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+
+		return "";
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

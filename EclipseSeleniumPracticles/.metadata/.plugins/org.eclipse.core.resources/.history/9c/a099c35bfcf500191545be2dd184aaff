@@ -1,0 +1,10 @@
+package com.k2js.seleniummbasics.browseroptions;
+
+public class OpenSameChromeBrowser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

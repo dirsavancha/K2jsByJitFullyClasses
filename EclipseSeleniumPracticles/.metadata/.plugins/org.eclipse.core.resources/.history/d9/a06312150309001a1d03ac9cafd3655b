@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+  <test thread-count="5" verbose="2" name="Default test">
+  		<parameter name="bname" value="chrome" />
+		<parameter name="rmode" value="local" />
+    <classes>
+      <class name="com.k2js.mavenfinalfw.practice.testscripts.NTRunner">
+        <methods>
+          <include name="verifyHomePageTitle"/>
+        </methods>
+      </class> <!-- com.k2js.mavenfinalfw.practice.testscripts.NTRunner -->
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->

@@ -1,0 +1,21 @@
+package com.rk.apsrtcframework.util;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import com.sun.xml.internal.stream.buffer.sax.Properties;
+
+public class CommonUtil {
+
+	public static String getProperties(String fn,String key) throws IOException {
+		try {
+		FileInputStream fis=new FileInputStream("screenshot/"+fn+".properties");
+		Properties p=new Properties();
+		
+		return "";
+	}catch(FileNotFoundException e) {
+		return null;
+	}
+	}
+}

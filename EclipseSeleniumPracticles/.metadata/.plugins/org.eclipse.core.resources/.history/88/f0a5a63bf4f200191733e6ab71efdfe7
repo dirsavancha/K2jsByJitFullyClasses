@@ -1,0 +1,43 @@
+package com.k2js.seleniumbasics.assignments;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class FindNthLargestValueInYahooText2 {
+	static ChromeDriver cd;
+
+	@FindBy(xpath = "//ul[@role='listbox']/li[@class='yui3-aclist-item']")
+	private List<WebElement> lislist_searchkeys;
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\SeleniumTrainingByJitendra\\Tools\\Selenium 3.141.59\\chromedriver.exe");
+		ChromeDriver cd = new ChromeDriver();
+		cd.get("https://www.yahoo.com");
+		cd.manage().window().maximize();
+		cd.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		cd.findElement(By.id("uh-search-box")).sendKeys("Testing");
+		List<WebElement> list_searchkeys = cd
+				.findElementsByXPath("//ul[@role='listbox']/li[@class='yui3-aclist-item']");
+		int totalSize = list_searchkeys.size();
+		System.out.println(totalSize);
+		FindNthLargestValueInYahooText2 cro = PageFactory.initElements(cd, FindNthLargestValueInYahooText2.class);
+		WebElement[] allele = cro.lislist_searchkeys.toArray(new WebElement[0]);
+		Arrays.parallelSort(allele, (x, y) -> y.getText().length() - x.getText().length());
+		Arrays.stream(allele).forEach(x -> System.out.println(x.getText()));
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		allele[0].click();
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.rk.apsrtcframework.util;
+
+import org.openqa.selenium.WebDriver;
+
+public class BrowserFactory {
+	static WebDriver driver;
+
+	public static WebDriver gerBrowser(String bn,String rm) {
+		if(rm.equalsIgnoreCase("")) {
+			
+		}
+		return driver;
+	}
+
+}

@@ -1,0 +1,16 @@
+1571626169302	Rename type 'ClickButtonInADiffrentFrame'
+1571627934541	Rename type 'SwithToFrameUsingWait'
+1571627953463	Copy compilation unit
+1571628072418	Copy compilation unit
+1571628171635	Rename type 'SwithToFrameUsingWait_SwitchToItById'
+1571628206034	Rename type 'SwithToFrameUsingWait_SwitchToItByLocator'
+1571628235760	Rename type 'SwithToFrameUsingWait_SwitchToItByString'
+1571628282855	Rename type 'SwithToFrameUsingWait_SwitchToItBystr'
+1571628707394	Copy compilation unit
+1571709468784	Copy compilation unit
+1571710084150	Copy compilation unit
+1571711562350	Rename compilation unit 'SwitchToMainWindowAndClickOnRunAndValidate.java'
+1571713012257	Copy compilation unit
+1571738101542	Rename type 'ComeBackFromUsingDefaultcontent'
+1571761038579	Copy compilation unit
+1571819740483	Rename package 'com.k2js.seleniumbasics.mousekeywordactions'

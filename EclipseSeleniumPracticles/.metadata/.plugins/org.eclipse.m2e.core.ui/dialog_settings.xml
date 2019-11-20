@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\mavenbasicframework\TestData\homepage.properties"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\mavenbasicframework\src\test\java\com\k2js\mavenbasicframework\testscripts\NewTourRunner.java"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\mavenbasicframework\pom.xml"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\PracticeAndAssignmentSeleniumBasics"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\mavenbasicframework"/>
+			<item value="D:\SeleniumTrainingByJitendra\Practicles\EclipseSeleniumPracticles\JenkinsDemo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.k2js.mainfinalfw.practice"/>
+			<item value="com.k2js.mainfinalfw"/>
+			<item value="com.k2js.excelreading.practice"/>
+			<item value="com.k2js.TestNGLearning.practice"/>
+			<item value="com.rk.apsrtcframework"/>
+			<item value="com.k2js.mavenframework"/>
+			<item value="com.k2js.TestNGFrameWork"/>
+			<item value="com.k2js.newtoursdemout.framework"/>
+			<item value="com.k2js.PracticeAndAssignmentsofSeleniumWithMaven"/>
+			<item value="com.k2js.JenkinsBasics"/>
+			<item value="com.k2js.JenkinsPractice"/>
+			<item value="com.k2js.JenkinsDemo"/>
+			<item value="com.k2js.mavenbasicframework.testscripts"/>
+			<item value="com.k2js.mavenSeleniumbasics.autoit"/>
+		</list>
+		<list key="groupId">
+			<item value="com.k2js"/>
+			<item value="com.rk"/>
+		</list>
+		<list key="artifactId">
+			<item value="mainfinalframework"/>
+			<item value="mainfinalfw"/>
+			<item value="excelreading"/>
+			<item value="TestNGLearning"/>
+			<item value="apsrtcframework"/>
+			<item value="mavenframework"/>
+			<item value="TestNGFrameWork"/>
+			<item value="newtoursdemout"/>
+			<item value="PracticeAndAssignmentsofSeleniumWithMaven"/>
+			<item value="JenkinsBasics"/>
+			<item value="JenkinsPractice"/>
+			<item value="JenkinsDemo"/>
+			<item value="mavenbasicframework"/>
+			<item value="mavenSeleniumbasics"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="JenkinsDemo"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="JenkinsDemo"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="531"/>
+		<item key="x" value="443"/>
+		<item key="y" value="10"/>
+	</section>
+</section>

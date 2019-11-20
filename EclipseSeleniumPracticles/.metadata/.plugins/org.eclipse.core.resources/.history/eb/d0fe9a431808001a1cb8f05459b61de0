@@ -1,0 +1,22 @@
+package com.k2js.TestNGLearning.testscripts;
+
+import org.testng.annotations.Test;
+
+public class NTRunner {
+	@Test
+	public void verifyHomePageTitle() {
+		System.out.println("Read Browser from config.properties");
+		System.out.println("Read Run mode from config.properties");
+		System.out.println("Read url from config.properties");
+		System.out.println("Test case Started");
+		System.out.println("Open browser");
+		System.out.println("Open url");
+		System.out.println("Get Actual Title");
+		System.out.println("Get Expected Titile");
+		System.out.println("Validate Title");
+		System.out.println("Close Browser");
+		System.out.println("Test Case Completed");
+		System.out.println("----------------------------");
+	}
+
+}

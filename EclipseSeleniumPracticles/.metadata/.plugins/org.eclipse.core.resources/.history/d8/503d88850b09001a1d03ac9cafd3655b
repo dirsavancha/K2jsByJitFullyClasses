@@ -1,0 +1,122 @@
+package com.k2js.mavenfinalfw.practice.testscripts;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.k2js.mavenfinalfw.practice.pageobjects.ConformationPage;
+import com.k2js.mavenfinalfw.practice.pageobjects.HomePage;
+import com.k2js.mavenfinalfw.practice.pageobjects.RegistrationPage;
+import com.k2js.mavenfinalfw.practice.util.BrowserFactory;
+import com.k2js.mavenfinalfw.practice.util.CommonUtil;
+import com.k2js.mavenfinalfw.practice.util.ExcelReader;
+import com.k2js.mavenfinalfw.practice.util.FailRerun;
+
+public class NTRunner {
+	String bn, rm, url;
+	WebDriver driver;
+	HomePage hp;
+	RegistrationPage rp;
+
+	@Parameters({ "bname", "rmode" })
+	@BeforeTest
+	public void dataReader(@Optional("chrome") String b, @Optional("local") String r) {
+		System.out.println("Before Test");
+		this.bn = b;
+		this.rm = r;
+	}
+
+	@BeforeClass
+	public void readConfigData() {
+		System.out.println("BeforeClass");
+		try {
+			this.url = CommonUtil.getProperties("config", "url");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@BeforeMethod
+	public void preCondition() {
+		System.out.println("Before Method");
+		this.driver = BrowserFactory.getBrowser(this.bn, this.rm);
+		BrowserFactory.opernUrl(this.url);
+		this.hp = PageFactory.initElements(this.driver, HomePage.class);
+	}
+
+	@Test(dataProvider = "ntt", dataProviderClass = ExcelReader.class, retryAnalyzer = FailRerun.class, groups = {
+			"high" })
+	public void verifyHomePageTitle(String... data) {
+
+		System.out.println("verifyHomePageTitle");
+		String errMsg = "", result = "Fail";
+		try {
+			System.out.println(" i am inside try ");
+			String acttitle = this.hp.getHomePageTitle();
+			System.out.println("Actual is" + acttitle);
+			String exptitle = data[0];
+
+			Assert.assertEquals(acttitle, exptitle, "Title are not matching");
+			System.out.println("Expecte is" + exptitle);
+			result = "pass";
+		} catch (Throwable t) {
+			errMsg = t.getMessage();
+			CommonUtil.takeScreenShot(this.driver);
+			throw t;
+		} finally {
+			System.out.println("Result=" + result + "rowno" + data[data.length - 1]);
+			if (!errMsg.isEmpty()) {
+				System.out.println("Error" + errMsg);
+			}
+		}
+	}
+
+	@Test(dataProvider = "ntt", dataProviderClass = ExcelReader.class, retryAnalyzer = FailRerun.class, groups = {
+			"medium" })
+	public void verifyConformationMessage(String... data) {
+		System.out.println("Conformation Page");
+		String errMsg = "", result = "Fail";
+		try {
+			hp.clickRegLink();
+			this.rp = PageFactory.initElements(this.driver, RegistrationPage.class);
+			rp.enterFirstName(data[0]);
+			rp.enterLastName(data[1]);
+			rp.enterMobileNumber(data[2]);
+			rp.enterEmailId(data[3]);
+			rp.enterAdress_1(data[4]);
+			rp.enterCity(data[5]);
+			rp.enterState(data[6]);
+			rp.enterpostalCode(data[7]);
+			rp.enterCountry(data[8]);
+			rp.enterUserName(data[9]);
+			rp.enterPasword(data[10]);
+			rp.enterConformPassword(data[11]);
+
+		} catch (Throwable t) {
+			errMsg = t.getMessage();
+			CommonUtil.takeScreenShot(this.driver);
+			throw t;
+		} finally {
+			System.out.println("Result=" + result + "rowno" + data[data.length - 1]);
+			if (!errMsg.isEmpty()) {
+				System.out.println("Error" + errMsg);
+			}
+		}
+	}
+
+	@AfterMethod
+	public void postCondition() {
+		System.out.println("After Method");
+		BrowserFactory.closeBrowser();
+	}
+
+}

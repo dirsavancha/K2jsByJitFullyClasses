@@ -1,0 +1,16 @@
+1570627556032	Rename package 'com.k2js'
+1570627625517	Rename type 'CentralBoard'
+1570635256158	Delete element
+1570636588302	Rename type 'ASchool'
+1570636603150	Rename type 'BSchool'
+1570636618556	Rename type 'CSchool'
+1570636641426	Rename type 'CSchoolBranch'
+1570636855735	Rename type 'StudentFather'
+1570637021040	Rename type 'CISCSchool'
+1570637027956	Rename type 'CISCSchoolBranch'
+1570639054659	Rename package 'com.k2js.es.studentfather'
+1570642388636	Move compilation unit
+1570642422095	Rename type 'FindingSchool'
+1570644926293	Delete element
+1570644940997	Rename type 'Student_SearchingSchool'
+1570645038788	Delete element

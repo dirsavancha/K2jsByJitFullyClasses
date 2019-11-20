@@ -1,0 +1,48 @@
+package com.rk.apsrtcframework.pageobjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.FindElements;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class ReservationPage {
+
+	@FindBy(xpath = "//a[@title='Home']")
+	private WebElement homeLink;
+
+	@FindBy(id = "fromPlaceName")
+	private WebElement fromPlaceText;
+
+	@FindBy(id = "toPlaceName")
+	private WebElement toPlaceText;
+
+	@FindBy(id = "txtJourneyDate")
+	private WebElement startDate;
+
+	@FindBy(id = "searchBtn")
+	private WebElement clickCheckAvailabilityButton;
+
+	@FindBy(xpath="ul[@id='ui-id-1']/li")
+	private List<WebElement> fromPlaceValue;
+
+	WebDriver driver;
+
+	public ReservationPage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public ReservationPage clickOnHomeButton() {
+		homeLink.click();
+		return PageFactory.initElements(driver, ReservationPage.class);
+	}
+
+	public void fromPlace(String frmpl) {
+		fromPlaceText.sendKeys(frmpl);
+		fromPlaceValue.stream().filter(x->x.getText().equals("BADVEL")).forEach(x->x.click());
+	}
+		
+}

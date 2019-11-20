@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TestNGFrameWork&apos;" deleteContents="false" description="Delete resource &apos;TestNGFrameWork&apos;" element1="/TestNGFrameWork" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1573479541419"/>&#x0A;<refactoring comment="Rename resource &apos;apsrtcframework&apos; to &apos;ApsrtcFramework&apos;" description="Rename resource &apos;apsrtcframework&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/apsrtcframework" name="ApsrtcFramework" stamp="1573479674975" updateReferences="true"/>
+</session>

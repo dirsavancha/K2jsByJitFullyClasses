@@ -1,0 +1,9 @@
+package com.k2js.TestNGLearning.testscripts;
+
+public class NTRunner {
+	@Test
+	public void verifyHomePageTitle() {
+		
+	}
+
+}

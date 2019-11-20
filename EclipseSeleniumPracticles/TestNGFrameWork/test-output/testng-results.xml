@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6818" started-at="2019-11-04T06:42:31Z" finished-at="2019-11-04T06:42:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6818" started-at="2019-11-04T06:42:31Z" finished-at="2019-11-04T06:42:38Z">
+      <class name="com.k2js.TestNGFrameWork.SampeTestNGClass">
+        <test-method status="PASS" signature="setBaseUrl()[pri:0, instance:com.k2js.TestNGFrameWork.SampeTestNGClass@e25b2fe]" name="setBaseUrl" is-config="true" duration-ms="5827" started-at="2019-11-04T06:42:31Z" finished-at="2019-11-04T06:42:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUrl -->
+        <test-method status="PASS" signature="verifyHomePageTtitle()[pri:0, instance:com.k2js.TestNGFrameWork.SampeTestNGClass@e25b2fe]" name="verifyHomePageTtitle" duration-ms="20" started-at="2019-11-04T06:42:37Z" finished-at="2019-11-04T06:42:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageTtitle -->
+        <test-method status="PASS" signature="teatDown()[pri:0, instance:com.k2js.TestNGFrameWork.SampeTestNGClass@e25b2fe]" name="teatDown" is-config="true" duration-ms="937" started-at="2019-11-04T06:42:37Z" finished-at="2019-11-04T06:42:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teatDown -->
+      </class> <!-- com.k2js.TestNGFrameWork.SampeTestNGClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

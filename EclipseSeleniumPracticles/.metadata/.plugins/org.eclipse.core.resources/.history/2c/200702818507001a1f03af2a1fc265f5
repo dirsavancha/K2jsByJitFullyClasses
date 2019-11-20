@@ -1,0 +1,13 @@
+package com.rk.apsrtcframework.pageobjects;
+
+import org.openqa.selenium.WebDriver;
+
+public class ReservationPage {
+	
+	
+	WebDriver driver;
+	public ReservationPage(WebDriver driver) {
+		this.driver=driver;
+	}
+
+}

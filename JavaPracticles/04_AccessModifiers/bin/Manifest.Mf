@@ -1,0 +1,1 @@
+main-class: com.k2js.accessmodifiers.practice.A

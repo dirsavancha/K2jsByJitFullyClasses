@@ -1,0 +1,19 @@
+package com.k2js.excelreading.practise;
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+class FailRerun implements IRetryAnalyzer{
+
+	@Override
+	public boolean retry(ITestResult result) {
+		int min=0;
+		int max=2;
+
+		if(min<max) {
+			min++;
+			return true;
+		}
+		return false;
+	}
+}

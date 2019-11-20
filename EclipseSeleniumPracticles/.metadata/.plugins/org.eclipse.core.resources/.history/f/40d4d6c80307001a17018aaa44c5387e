@@ -1,0 +1,42 @@
+package com.rk.apsrtcframework.util;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.Properties;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+public class CommonUtil {
+// To read the Key and values in the file(To read the file)
+	public static String getProperties(String fn, String key) {
+		try {
+			FileInputStream fis = new FileInputStream("screenshot/" + fn + ".properties");
+			Properties prop = new Properties();
+			prop.load(fis);
+
+			return prop.getProperty(key);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	// Method to get Current time
+	
+	public static String getCurrentDateTime() {
+		String date=LocalDateTime.now().toString();
+		return date.replace(":", "_").substring(0, date.indexOf("."));
+	}
+	
+	// Method to take screenshot
+	
+	public static void takeScreeenShots(WebDriver driver) {
+		TakesScreenshot tss=(TakesScreenshot) driver;
+		File src=tss.getScreenshotAs(OutputType.FILE);
+		File dest=new File("screenshot/"+getCurrentDateTime()+".png");
+	}
+}

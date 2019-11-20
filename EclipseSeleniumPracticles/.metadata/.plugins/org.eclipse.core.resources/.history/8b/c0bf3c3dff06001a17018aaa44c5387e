@@ -1,0 +1,33 @@
+package com.rk.apsrtcframework.pageobjects;
+
+import java.time.LocalDateTime;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+	
+	public class HomePage {
+	WebDriver driver;
+	
+	@FindBy(xpath="//a[contains(text(),'eTicket Login')]")
+	private WebElement eticketlogin;
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public ReservationPage clickOn_eTicket_LoginButton() {
+		eticketlogin.click();
+		return PageFactory.initElements(driver, ReservationPage.class);
+	}
+	
+	public static void main(String... args) {
+			String date=LocalDateTime.now().toString();
+			System.out.println(ate);
+			//date.replace(":", "_").substring(0, date.indexOf('.'));
+		}
+	}
+
+}

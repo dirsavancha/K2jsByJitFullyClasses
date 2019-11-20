@@ -1,0 +1,61 @@
+package com.rk.apsrtcframework.testscripts;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.io.FileNotFoundException;
+
+import org.openqa.selenium.WebDriver;
+
+import com.rk.apsrtcframework.pageobjects.HomePage;
+import com.rk.apsrtcframework.util.BrowserFactory;
+import com.rk.apsrtcframework.util.CommonUtil;
+
+public class ApsrtcRunner {
+	WebDriver driver;
+	String errormsg = "", Result = "Fail";
+
+	@Test
+	public void verifyHomepageTitle() throws Throwable {
+		try {
+			String rm = CommonUtil.getProperties("config", "runmode");
+			String bn = CommonUtil.getProperties("config", "browsername");
+			String url = CommonUtil.getProperties("config", "url");
+			driver = BrowserFactory.getBrowser(bn, rm);
+			BrowserFactory.openUrl(url);
+
+			HomePage hp = PageFactory.initElements(driver, HomePage.class);
+			String exp_title = hp.getHomePageTitile();
+			System.out.println("Actual Titile is" + exp_title);
+			String act_title = CommonUtil.getProperties("homepage", "homepage.title");
+			System.out.println("Excpected title is" + act_title);
+			Assert.assertEquals(act_title, exp_title, "Titile is not matching");
+			hp.clickOn_eTicket_LoginButton();
+		} catch (Throwable t) {
+			CommonUtil.takeScreeenShots(driver);
+			t.printStackTrace();
+			errormsg = t.getMessage();
+			throw t;
+		} finally {
+			if (!errormsg.isEmpty()) {
+				System.out.println(errormsg);
+				System.out.println(Result);
+			}
+		}
+
+	}
+
+	public void bookingTickets() {
+
+		try {
+			String rm = CommonUtil.getProperties("config", "runmode");
+			String bn = CommonUtil.getProperties("config", "browsername");
+			String url = CommonUtil.getProperties("config", "url");
+
+		} catch (Throwable t) {
+			t.printStackTrace();
+		}
+	}
+
+}
